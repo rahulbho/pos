@@ -9,6 +9,7 @@ def initialiseOrder() {
     locale = (Locale) context.get("locale");
     currencyUomId = "USD";
     userLogin = delegator.findOne("UserLogin", false, [userLoginId: "posAnonymous"]);
+    /*TODO: use dynamic value of productStoreId */
     cart = new ShoppingCart(delegator, "9100", locale, currencyUomId);
     cart.setOrderType("SALES_ORDER");
     /*TODO: use POS_SALES_CHANNEL instead*/
