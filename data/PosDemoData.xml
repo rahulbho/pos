@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <UserLogin userLoginId="1" partyId="admin" currentPassword="356a192b7913cf4c54574d18bdf24699395428d4" passwordHint="The Number One, Yeah, Literally"/>
+    <UserLogin userLoginId="2" partyId="ltdadmin" currentPassword="a54bed37c5b3b28ee30760b5c8d1bbd735ef10cf" passwordHint="The Number Two, Yeah, Literally"/>
+    <UserLogin userLoginId="posAnonymous" partyId="_NA_" enabled="Y" requirePasswordChange="N" />
+    <UserLoginSecurityGroup groupId="FULLADMIN" userLoginId="1" fromDate="2014-11-10 12:00:00.0"/>
+    <UserLoginSecurityGroup groupId="FULLADMIN" userLoginId="2" fromDate="2014-11-10 12:00:00.0"/>
+    <Facility facilityId="MyRetailStore" ownerPartyId="Company" facilityTypeId="RETAIL_STORE" facilityName="My Retail Store" description="Example Retail (POS) Store"/>
+    <ProductStore productStoreId="9100" storeName="OFBiz Physical Retail Store" companyName="Open For Business" title="Open For Retail"
+        subtitle="Part of the Open For Business Family of Open Source Software" payToPartyId="Company" daysToCancelNonPay="30" prorateShipping="Y" prorateTaxes="Y"
+        inventoryFacilityId="MyRetailStore" oneInventoryFacility="Y" checkInventory="N" reserveInventory="Y"
+        reserveOrderEnumId="INVRO_FIFO_REC" requireInventory="N" isImmediatelyFulfilled="Y"
+        defaultLocaleString="en_US" defaultCurrencyUomId="USD" allowPassword="Y" explodeOrderItems="N" retryFailedAuths="N" manualAuthIsCapture="Y"
+        headerApprovedStatus="ORDER_APPROVED" itemApprovedStatus="ITEM_APPROVED" digitalItemApprovedStatus="ITEM_APPROVED" headerDeclinedStatus="ORDER_REJECTED"
+        itemDeclinedStatus="ITEM_REJECTED" headerCancelStatus="ORDER_CANCELLED" itemCancelStatus="ITEM_CANCELLED" orderNumberPrefix="RS"
+        authDeclinedMessage="There has been a problem with your method of payment. Please try a different method or call customer service."
+        authFraudMessage="Your order has been rejected and your account has been disabled due to fraud."
+        authErrorMessage="Problem connecting to payment processor."
+        visualThemeId="EC_DEFAULT" autoApproveInvoice="Y" shipIfCaptureFails="Y" autoApproveOrder="Y"/>
+    <WebSite webSiteId="PosWebStore" siteName="Pos website" productStoreId="9100" />
+    <ProdCatalog prodCatalogId="DemoCatalog" catalogName="Demo Catalog" useQuickAdd="Y"/>
+    <ProductStoreCatalog productStoreId="9100" prodCatalogId="DemoCatalog" fromDate="2001-05-13 12:00:00.0" sequenceNum="1"/>
+    <ProductCategory categoryName="Demo Browse Root" longDescription="Demo Catalog Primary Browse Root Category" productCategoryId="CATALOG1" productCategoryTypeId="CATALOG_CATEGORY"/>
+    <ProdCatalogCategory prodCatalogId="DemoCatalog" productCategoryId="CATALOG1" fromDate="2001-05-13 12:00:00.0"
+        sequenceNum="1" prodCatalogCategoryTypeId="PCCT_BROWSE_ROOT"/>
+    <ProductCategory longDescription="long description of Gizmos" primaryParentCategoryId="CATALOG1" productCategoryId="100" productCategoryTypeId="CATALOG_CATEGORY"/>
+    <ProductCategoryRollup fromDate="2001-05-13 12:00:00.0" parentProductCategoryId="CATALOG1" productCategoryId="100"/>
+    <Product productId="GZ-1000" productTypeId="FINISHED_GOOD" primaryProductCategoryId="100" productName="Tiny Gizmo" internalName="Tiny Gizmo" description="The smallest gizmo in town." longDescription="This gizmo is very small and runs on solar power." taxable="Y" chargeShipping="Y" autoCreateKeywords="Y" isVirtual="N" isVariant="N" createdDate="2001-05-13 12:00:00.0" createdByUserLogin="admin" lastModifiedDate="2001-05-13 12:00:00.0" lastModifiedByUserLogin="admin"/>
+    <Product productId="GZ-1001" productTypeId="FINISHED_GOOD" primaryProductCategoryId="100" productName="Nan Gizmo" internalName="Nan Gizmo" description="Indian style Nan gizmo" taxable="Y" chargeShipping="Y" autoCreateKeywords="Y" isVirtual="N" isVariant="N" createdDate="2001-05-13 12:00:00.0" createdByUserLogin="admin" lastModifiedDate="2001-05-13 12:00:00.0" lastModifiedByUserLogin="admin"/>
+    <Product productId="GZ-1002" productTypeId="FINISHED_GOOD" primaryProductCategoryId="100" productName="Rainbow Gizmo" internalName="Rainbow Gizmo" description="The only multi-colored gizmo" longDescription="This is the original multi-colored gizmo, only available from OFBiz!" taxable="Y" chargeShipping="Y" autoCreateKeywords="Y" isVirtual="N" isVariant="N" createdDate="2001-05-13 12:00:00.0" createdByUserLogin="admin" lastModifiedDate="2001-05-13 12:00:00.0" lastModifiedByUserLogin="admin"/>
+    <Product productId="GZ-1003" productTypeId="FINISHED_GOOD" primaryProductCategoryId="100" productName=".NIT Gizmo" internalName=".NIT Gizmo" description="M$ .NIT gizmo" taxable="Y" chargeShipping="Y" autoCreateKeywords="Y" isVirtual="N" isVariant="N" createdDate="2001-05-13 12:00:00.0" createdByUserLogin="admin" lastModifiedDate="2001-05-13 12:00:00.0" lastModifiedByUserLogin="admin">
+        <longDescription><![CDATA[This gizmo only works in certain areas and requires a lot of extra space to move around.<br/><br/>It is not recommended for mission critical applications or those with a low tolerance for pain and frustration.]]></longDescription>
+    </Product>
+</entity-engine-xml>

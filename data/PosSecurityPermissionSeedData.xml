@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <SecurityPermission description="View operations in the Pos Component." permissionId="POS_VIEW"/>
+    <SecurityPermission description="Create operations in the Pos Component." permissionId="POS_CREATE"/>
+    <SecurityPermission description="Update operations in the Pos Component." permissionId="POS_UPDATE"/>
+    <SecurityPermission description="Delete operations in the Pos Component." permissionId="POS_DELETE"/>
+    <SecurityPermission description="ALL operations in the Pos Component." permissionId="POS_ADMIN"/>
+
+    <SecurityGroupPermission groupId="SUPER" permissionId="POS_ADMIN"/>
+
+</entity-engine-xml>

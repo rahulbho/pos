@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/services.xsd">
+    <description>Pos Services</description>
+    <vendor></vendor>
+    <version>1.0</version>
+
+    <service name="noSyntaxError" engine="interface">
+        <description>
+            Dummy service to prevent empty files and syntax error - Remove when the 1st real service will be added here 
+        </description>
+    </service> 
+    <service name="getProductDetails" engine="groovy" auth="false" location="component://pos/script/com/hwm/pos/services/PosServices.groovy" invoke="getProductDetails">
+      <description>Service to get product details</description>
+      <attribute name="idToFind" mode="IN" type="String" ></attribute>
+      <attribute name="productName" mode="OUT" type="String" optional="true"></attribute>
+      <attribute name="productPrice" mode="OUT" type="Map" optional="true"></attribute>
+      <attribute name="productImageUrls" mode="OUT" type="Map" optional="true" ></attribute>
+    </service>
+    <service name="initialiseOrder" engine="groovy" auth="false" location="component://pos/script/com/hwm/pos/services/PosServices.groovy" invoke="initialiseOrder">
+      <description>Service to initialise an order</description>
+      <attribute name="orderId" mode="OUT" type="String"></attribute>
+    </service>
+    <service name="addItem" engine="groovy" auth="false" location="component://pos/script/com/hwm/pos/services/PosServices.groovy" invoke="addItem">
+      <attribute name="orderId" mode="IN" type="String"></attribute>
+      <attribute name="productId" mode="IN" type="String" ></attribute>
+      <attribute name="orderId" mode="OUT" type="String"></attribute>
+    </service>
+    <service name="getOrderDetails" engine="groovy" auth="false" location="component://pos/script/com/hwm/pos/services/PosServices.groovy" invoke="getOrderDetails">
+      <description>Service to get all order items</description>
+      <attribute name="orderId" mode="IN" type="String"></attribute>
+      <attribute name="orderDetails" mode="OUT" type="Map"></attribute>
+    </service>
+    <service name="editOrderItem" engine="groovy" auth="false" location="component://pos/script/com/hwm/pos/services/PosServices.groovy" invoke="editOrderItem">
+      <description>Service to edit order item</description>
+      <attribute name="orderId" mode="IN" type="String"></attribute>
+      <attribute name="orderItemSeqId" mode="IN" type="String"></attribute>
+      <attribute name="quantity" mode="IN" type="String" optional="true"></attribute>
+      <attribute name="unitPrice" mode="IN" type="String" optional="true"></attribute>
+      <attribute name="orderDetails" mode="OUT" type="Map" optional="true"></attribute>
+    </service>
+</services>
