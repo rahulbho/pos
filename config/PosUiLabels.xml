@@ -12,6 +12,24 @@
         <value xml:lang="it">Un modulo della famiglia di software open source Open For Business</value>
         <value xml:lang="zh">开源软件OFBiz的组成部分</value>
     </property>
+    <property key="PosPleaseEnterValidQuantity">
+        <value xml:lang="en">Please enter valid quantity</value>
+    </property>
+    <property key="PosUnableToAccessSystem">
+        <value xml:lang="en">Unable to access System</value>
+    </property>
+    <property key="PosUnableToAddItem">
+        <value xml:lang="en">Unable to add Item</value>
+    </property>
+    <property key="PosUnableToEditItem">
+        <value xml:lang="en">Unable to edit Item</value>
+    </property>
+    <property key="PosUnableToFetchOrder">
+        <value xml:lang="en">Unable to fetch order details</value>
+    </property>
+    <property key="PosUnableToRemoveItem">
+        <value xml:lang="en">Unable to remove Item</value>
+    </property>
     <property key="PosViewPermissionError">
         <value xml:lang="en">You are not allowed to view this page.</value>
         <value xml:lang="zh">不允许你浏览这个页面。</value>
