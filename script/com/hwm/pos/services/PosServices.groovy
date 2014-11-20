@@ -39,9 +39,16 @@ def addItem() {
 }
 def editOrderItem() {
     userLogin = delegator.findOne("UserLogin", false, [userLoginId: "posAnonymous"]);
+    result = ServiceUtil.returnSuccess();
     orderId = context.orderId;
     orderItemSeqId = context.orderItemSeqId;
     quantity = context.quantity;
+    qty = quantity as int;
+    if (qty <= 0) {
+        cancelOrderItemCtx = [userLogin: userLogin, orderItemSeqId: orderItemSeqId, orderId: orderId];
+        dispatcher.runSync("cancelOrderItem", cancelOrderItemCtx);
+        return result;
+    }
     unitPrice = context.unitPrice;
     /*prepare input maps*/
     overridePriceMap = [:];
@@ -53,7 +60,16 @@ def editOrderItem() {
     itemPriceMap[orderItemSeqId] = unitPrice;
     updateOrderItemsCtx = [userLogin: userLogin, orderId: orderId, overridePriceMap: overridePriceMap, itemQtyMap: itemQtyMap, itemPriceMap: itemPriceMap];
     dispatcher.runSync("updateOrderItems", updateOrderItemsCtx);
+    
+    return result;
+}
+def deleteOrderItem() {
+    userLogin = delegator.findOne("UserLogin", false, [userLoginId: "posAnonymous"]);
     result = ServiceUtil.returnSuccess();
+    orderId = context.orderId;
+    orderItemSeqId = context.orderItemSeqId;
+    cancelOrderItemCtx = [userLogin: userLogin, orderItemSeqId: orderItemSeqId, orderId: orderId];
+    dispatcher.runSync("cancelOrderItem", cancelOrderItemCtx);
     return result;
 }
 def getOrderDetails() {

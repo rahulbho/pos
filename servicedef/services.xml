@@ -26,6 +26,10 @@
       <attribute name="productId" mode="IN" type="String" ></attribute>
       <attribute name="orderId" mode="OUT" type="String"></attribute>
     </service>
+    <service name="deleteOrderItem" engine="groovy" auth="false" location="component://pos/script/com/hwm/pos/services/PosServices.groovy" invoke="deleteOrderItem">
+      <attribute name="orderId" mode="IN" type="String"></attribute>
+      <attribute name="orderItemSeqId" mode="IN" type="String" ></attribute>
+    </service>
     <service name="getOrderDetails" engine="groovy" auth="false" location="component://pos/script/com/hwm/pos/services/PosServices.groovy" invoke="getOrderDetails">
       <description>Service to get all order items</description>
       <attribute name="orderId" mode="IN" type="String"></attribute>

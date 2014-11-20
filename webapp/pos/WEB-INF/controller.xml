@@ -33,6 +33,11 @@
         <event type="service" invoke="editOrderItem"></event>
         <response name="success" type="request" value="json"/>
     </request-map>
+    <request-map uri="deleteOrderItem">
+        <security https="false" auth="false"/>
+        <event type="service" invoke="deleteOrderItem"></event>
+        <response name="success" type="request" value="json"/>
+    </request-map>
     <!-- View Mappings -->
     <view-map name="main" type="screen" page="component://pos/widget/PosScreens.xml#main"/>
 </site-conf>
