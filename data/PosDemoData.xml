@@ -5,6 +5,7 @@
     <UserLogin userLoginId="posAnonymous" partyId="_NA_" enabled="Y" requirePasswordChange="N" />
     <UserLoginSecurityGroup groupId="FULLADMIN" userLoginId="1" fromDate="2014-11-10 12:00:00.0"/>
     <UserLoginSecurityGroup groupId="FULLADMIN" userLoginId="2" fromDate="2014-11-10 12:00:00.0"/>
+    <UserLoginSecurityGroup groupId="FLEXADMIN" userLoginId="posAnonymous" fromDate="2014-11-10 12:00:00.0"/>
     <Facility facilityId="MyRetailStore" ownerPartyId="Company" facilityTypeId="RETAIL_STORE" facilityName="My Retail Store" description="Example Retail (POS) Store"/>
     <ProductStore productStoreId="9100" storeName="OFBiz Physical Retail Store" companyName="Open For Business" title="Open For Retail"
         subtitle="Part of the Open For Business Family of Open Source Software" payToPartyId="Company" daysToCancelNonPay="30" prorateShipping="Y" prorateTaxes="Y"
